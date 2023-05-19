@@ -3,6 +3,8 @@ package com.example.demo.student;
 public class StudentSearch {
     String name;
 
+    public StudentSearch() {
+    }
     public StudentSearch(String name) {
         this.name = name;
     }
