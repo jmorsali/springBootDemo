@@ -37,6 +37,9 @@ public class StudentService {
     }
 
     public void deleteStudent(Long studentId) {
+       var student= repository.findById(studentId);
+       if(student.isEmpty())
+           throw new IllegalStateException("student id "+studentId+" does not exist");
         repository.deleteById(studentId);
     }
 }
