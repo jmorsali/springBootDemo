@@ -2,8 +2,6 @@ package com.example.demo.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -35,5 +33,10 @@ public class StudentController {
     @PostMapping(value="/add")
     public void addStudent(@RequestBody Student student){
         studentService.addStudent(student);
+    }
+
+    @DeleteMapping(value="/{studentId}/delete")
+    public void deleteStudent(@PathVariable("studentId") Long studentId){
+        studentService.deleteStudent(studentId);
     }
 }

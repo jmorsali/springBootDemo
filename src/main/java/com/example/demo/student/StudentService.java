@@ -2,8 +2,6 @@ package com.example.demo.student;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -36,5 +34,9 @@ public class StudentService {
        if(students.isPresent() )
            throw new IllegalStateException("student email already has been taken");
         repository.save(student);
+    }
+
+    public void deleteStudent(Long studentId) {
+        repository.deleteById(studentId);
     }
 }

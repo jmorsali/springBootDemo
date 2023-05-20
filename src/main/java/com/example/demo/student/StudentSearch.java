@@ -5,10 +5,6 @@ public class StudentSearch {
 
     public StudentSearch() {
     }
-    public StudentSearch(String name) {
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
