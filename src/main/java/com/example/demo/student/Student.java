@@ -1,6 +1,7 @@
 package com.example.demo.student;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -12,10 +13,12 @@ public class Student {
     @SequenceGenerator(name="student_sequence",sequenceName = "student_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator ="student_sequence")
     private Long id;
+    @NotBlank(message = "Name is mandatory")
     private String name;
     @Transient
     private Integer age;
     private LocalDate dob;
+    @NotBlank(message = "Name is mandatory")
     private String email;
 
     public Student() {
